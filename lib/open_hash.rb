@@ -7,7 +7,7 @@ class OpenHash < Hash
     elsif has_key?(method_name.to_s)
       self[method_name.to_s]
     elsif method_name.to_s.end_with?("=")
-      self[method_name.to_s.chomp("=")] = args.first
+      self[method_name.to_s.chomp("=").to_sym] = args.first
     else
       super
     end
