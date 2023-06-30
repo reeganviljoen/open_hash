@@ -2,22 +2,13 @@ PATH
   remote: .
   specs:
     open_hash (0.1.0)
-      activesupport
 
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (7.0.6)
-      concurrent-ruby (~> 1.0, >= 1.0.2)
-      i18n (>= 1.6, < 2)
-      minitest (>= 5.1)
-      tzinfo (~> 2.0)
-    concurrent-ruby (1.2.2)
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
-    i18n (1.14.1)
-      concurrent-ruby (~> 1.0)
     io-console (0.6.0)
     irb (1.7.0)
       reline (>= 0.3.0)
@@ -25,8 +16,6 @@ GEM
     rake (13.0.6)
     reline (0.3.5)
       io-console (~> 0.5)
-    tzinfo (2.0.6)
-      concurrent-ruby (~> 1.0)
 
 PLATFORMS
   x86_64-darwin-21
