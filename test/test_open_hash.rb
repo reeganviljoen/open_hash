@@ -22,7 +22,7 @@ class TestOpenHash < Minitest::Test
   def test_it_sets_keys
     test_hash = OpenHash.new
     test_hash.test = "test"
-    assert test_hash["test"] == "test"
+    assert test_hash[:test] == "test"
   end
 
   def test_methods_retruns_keys
