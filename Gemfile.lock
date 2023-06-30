@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    open_hash (0.1.1)
+    open_hash (0.1.2)
 
 GEM
   remote: https://rubygems.org/
@@ -19,6 +19,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   debug
