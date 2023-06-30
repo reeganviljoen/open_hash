@@ -2,31 +2,31 @@
 require "test_helper"
 require "debug"
 
-class TestHashMethods < Minitest::Test
+class TestOpenHash < Minitest::Test
   def test_that_it_has_a_version_number
-    refute_nil ::HashMethods::VERSION
+    refute_nil ::OpenHash::VERSION
   end
 
   def test_it_gets_keys
-    test_hash = HashMethods::Base.new
+    test_hash = OpenHash::Base.new
     test_hash[:test] = "test"
     assert test_hash.test == "test"
   end
 
   def test_it_gets_keys_with_string
-    test_hash = HashMethods::Base.new
+    test_hash = OpenHash::Base.new
     test_hash["test"] = "test"
     assert test_hash.test == "test"
   end
 
   def test_it_sets_keys
-    test_hash = HashMethods::Base.new
+    test_hash = OpenHash::Base.new
     test_hash.test = "test"
     assert test_hash["test"] == "test"
   end
 
   def test_methods_retruns_keys
-    test_hash = HashMethods::Base.new
+    test_hash = OpenHash::Base.new
     test_hash.test = "test"
 
     assert test_hash.methods.include?(:test)

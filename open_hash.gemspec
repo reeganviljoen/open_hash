@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative "lib/hash_methods/version"
+require_relative "lib/open_hash/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "hash_methods"
-  spec.version = HashMethods::VERSION
+  spec.name = "open_hash"
+  spec.version = OpenHash::VERSION
   spec.authors = ["Reegan Viljoen"]
   spec.email = ["reegan.viljoen@platform45.com"]
 

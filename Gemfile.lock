@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    hash_methods (0.1.0)
+    open_hash (0.1.0)
       activesupport
 
 GEM
@@ -33,8 +33,8 @@ PLATFORMS
 
 DEPENDENCIES
   debug
-  hash_methods!
   minitest (~> 5.0)
+  open_hash!
   rake (~> 13.0)
 
 BUNDLED WITH

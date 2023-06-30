@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require "active_support/hash_with_indifferent_access"
 
-module HashMethods
+module OpenHash
   class Base < Hash
     def method_missing(method_name, *args, &block)
       if has_key?(method_name)
