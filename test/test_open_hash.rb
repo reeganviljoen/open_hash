@@ -32,4 +32,10 @@ class TestOpenHash < Minitest::Test
     assert test_hash.methods.include?(:test)
     assert test_hash.methods.include?(:test=)
   end
+
+  def test_hash_converter
+    test_hash = { test: "test" }.to_open_hash
+    binding.break
+    assert test_hash.test == "test"
+  end
 end

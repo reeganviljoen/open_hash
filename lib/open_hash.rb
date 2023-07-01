@@ -26,3 +26,9 @@ class OpenHash < Hash
     STRING = [MAJOR, MINOR, TINY].compact.join(".")
   end
 end
+
+class Hash
+  def to_open_hash
+    OpenHash.new(self)
+  end
+end
