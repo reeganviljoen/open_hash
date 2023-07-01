@@ -32,4 +32,10 @@ class TestOpenHash < Minitest::Test
     assert test_hash.methods.include?(:test)
     assert test_hash.methods.include?(:test=)
   end
+
+  def test_initialzer_with_args
+    test_hash = OpenHash.new(test: "test", test2: "test2")
+    assert test_hash.test == "test"
+    assert test_hash.test2 == "test2"
+  end
 end
