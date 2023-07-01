@@ -2,8 +2,8 @@
 
 class OpenHash < Hash
 
-  def initialize(**args)
-    args.each do |key, value|
+  def initialize(hash = {})
+    hash.each do |key, value|
       self[key] = value
     end
   end
@@ -31,5 +31,11 @@ class OpenHash < Hash
     TINY  = 0
 
     STRING = [MAJOR, MINOR, TINY].compact.join(".")
+  end
+end
+
+class Hash
+  def to_open_hash
+    OpenHash.new(self)
   end
 end
