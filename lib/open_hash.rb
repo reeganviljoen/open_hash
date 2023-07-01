@@ -1,6 +1,13 @@
 # frozen_string_literal: true
 
 class OpenHash < Hash
+
+  def initialize(**args)
+    args.each do |key, value|
+      self[key] = value
+    end
+  end
+
   def method_missing(method_name, *args, &block)
     if has_key?(method_name)
       self[method_name]
