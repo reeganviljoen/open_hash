@@ -9,7 +9,9 @@ class OpenHash < Hash
   end
 
   def method_missing(method_name, *args, &block)
-    if has_key?(method_name)
+    if method_name.to_s.end_with?("?")
+      has_key?(method_name.to_s.chomp("?").to_sym) || has_key?(method_name.to_s.chomp("?"))
+    elsif has_key?(method_name)
       self[method_name]
     elsif has_key?(method_name.to_s)
       self[method_name.to_s]
@@ -21,8 +23,7 @@ class OpenHash < Hash
   end
 
   def methods
-    setter_keys = keys.map { |key| "#{key}=".to_sym }
-    super + keys.map(&:to_sym) + setter_keys
+    super + setter_methods + getter_methods + predicate_methods
   end
 
   module VERSION
@@ -31,6 +32,21 @@ class OpenHash < Hash
     TINY  = 0
 
     STRING = [MAJOR, MINOR, TINY].compact.join(".")
+  end
+
+
+  private
+
+  def setter_methods
+    keys.map { |key| "#{key}=".to_sym }
+  end
+
+  def getter_methods
+    keys.map(&:to_sym)
+  end
+
+  def predicate_methods
+    keys.map { |key| "#{key}?".to_sym }
   end
 end
 
