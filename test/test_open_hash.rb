@@ -43,4 +43,14 @@ class TestOpenHash < Minitest::Test
     assert test_hash.test == "test"
     assert test_hash.test2 == "test2"
   end
+
+  def test_predicate_method_when_key_exists
+    test_hash = OpenHash.new(test: "test")
+    assert test_hash.test?
+  end
+
+  def test_predicate_method_when_key_does_not_exist
+    test_hash = OpenHash.new(test: "test")
+    refute test_hash.test2?
+  end
 end
