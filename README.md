@@ -1,24 +1,59 @@
 # OpenHash
-
-TODO: Delete this and the text below, and describe your gem
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/open_hash`. To experiment with that code, run `bin/console` for an interactive prompt.
+An openHash is a data structure, similar to a Hash, that allows you to use dot notation to access and assign key value pairs similar to an `open_struct`, this is an experimental library at the moment to test if their is a performance improvement when using a different approach to get similar results to `open_struct`
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
-
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+    $ bundle add open_hash
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+    $ gem install open_hash
 
 ## Usage
 
-TODO: Write usage instructions here
+  ### Initialization
+
+  You can use the constructor:
+    `test_open_hash = OpenHash.new(test_key_1: 'test', 'test_key_2' => 5)`
+
+  **OR**
+
+  You can convert a `hash` to on `open_hash`
+  `test_open_hash = { test_key_1: 'test', 'test_key_2' => 5 }.to_open_hash`
+
+  ### Methods
+
+  - You can access any key as a method:
+    ```
+    test_open_hash = { test_key_1: 'test', 'test_key_2' => 5 }.to_open_hash
+    test_open_hash.test_key_1 # "test"
+    ```
+  - You can assign any new key with a method
+    ```
+    test_open_hash = { test_key_1: 'test', 'test_key_2' => 5 }.to_open_hash
+    test_open_hash.test_key_3 = 'test_3'
+    test_open_hash # {:test_key_1=>"test", "test_key_2"=>5, :test_key_3=>"test_3"}
+    ```
+  - You assign an existing key with a method
+    ```
+    test_open_hash = { test_key_1: 'test', 'test_key_2' => 5 }.to_open_hash
+    test_open_hash.test_key_2 = 'test_2'
+    test_open_hash # {:test_key_1=>"test", "test_key_2"=>"test_2"}
+    ```
+  - You can test whether a key exists with a predicate method
+    ```
+    test_open_hash = { test_key: 'test'}.to_open_hash
+    # if a Key exists
+    test_open_hash.test_key? # true
+
+    # if a key does not exist
+    test_open_hash.test_key_2? # false
+    ```
+
+
+
 
 ## Development
 
